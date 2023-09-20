@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images:{
-    domains:["real-time-chat-a-pp","realtimechatbackend-production-d850"]
+    domains:["real-time-chat-a-pp","realtimechatbackend-production-d850","localhost"]
   }
 };
 
