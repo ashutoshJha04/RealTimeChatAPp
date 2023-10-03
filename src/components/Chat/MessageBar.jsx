@@ -41,13 +41,13 @@ function MessageBar() {
     },
     params:{
       from:userInfo.id,
-      to:currentChatUser?.data.id
+      to:currentChatUser?.id
     }
   })
 
   if(response.status===201){
     socket.current.emit("send-msg",{
-      to:currentChatUser?.data.id,
+      to:currentChatUser?.id,
       from:userInfo?.id,
       message:response.data.message,
     });
@@ -88,12 +88,12 @@ function MessageBar() {
   const sendMsg = async()=>{
    try {
     const {data} = await axios.post(ADD_MESSAGE_ROUTE,{
-      to:currentChatUser?.data.id,
+      to:currentChatUser?.id,
       from:userInfo?.id,
       message
     }).then(console.log("sent successfully"))
     socket.current.emit("send-msg",{
-      to:currentChatUser?.data.id,
+      to:currentChatUser?.id,
       from:userInfo?.id,
       message:data.message,
     });

@@ -37,11 +37,11 @@ function Main() {
 
   useEffect(()=>{
     const getMessages = async ()=>{
-      const {data:{messages}} = await axios.get(`${GET_ALL_MESSAGES}/${userInfo?.id}/${currentChatUser?.data.id}`);
+      const {data:{messages}} = await axios.get(`${GET_ALL_MESSAGES}/${userInfo?.id}/${currentChatUser?.id}`);
      
       dispatch({type:reducercases.SET_MESSAGES,messages});
     }
-    if (currentChatUser?.data.id) {
+    if (currentChatUser?.id) {
       getMessages();
       console.log("hi");
     }

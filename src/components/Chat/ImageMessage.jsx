@@ -48,7 +48,7 @@ function ImageMessage({ message }) {
       }
     };
 
-  return <div className={` p-1 rounded-lg ${message?.senderId === currentChatUser?.data.id ? " bg-incoming-background" : "bg-outgoing-background"}`}>
+  return <div className={` p-1 rounded-lg ${message?.senderId === currentChatUser?.id ? " bg-incoming-background" : "bg-outgoing-background"}`}>
     <div className="relative">
       <img src={`${HOST}/${message.message}`} className="rounded-lg" alt="asset"  onClick={handleDownloadClick} height={300} width={300} />
       <div className="absolute bottom-1 right-1 flex items-end gap-1">

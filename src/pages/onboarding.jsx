@@ -81,6 +81,7 @@ useEffect(() => {
         <div className="flex items-center justify-center" onClick={onboardUser}>
           <button className="flex items-center justify-center gap-3 bg-search-input-container-background p-4 rounded-lg" onClick={onboardUser}>Create Profile 😊</button>
         </div>
+        
       </div>
       <div>
         <Avatar type="xl" image={image} setImage={setimage} className=""/>
