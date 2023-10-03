@@ -10,9 +10,11 @@ function List() {
   useEffect(() => {
     const getContacts = async()=>{
       try {
-        const {data:{Users,onlineUsers}} = await axios(`${GET_INITIAL_CONTACTS}/${userInfo?.id}`);
+        
+        setInterval(async()=>{const {data:{Users,onlineUsers}} = await axios(`${GET_INITIAL_CONTACTS}/${userInfo?.id}`);
         dispatch({type:reducercases.SET_USER_CONTACTS,userContacts: Users});
-        dispatch({type:reducercases.SET_ONLINE_USERS,onlineUsers});
+        dispatch({type:reducercases.SET_ONLINE_USERS,onlineUsers});},5000);
+        
 
       } catch (error) {
         console.log(error);
