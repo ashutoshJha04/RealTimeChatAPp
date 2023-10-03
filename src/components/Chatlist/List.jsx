@@ -11,11 +11,13 @@ function List() {
     const getContacts = async()=>{
       try {
         
-        setInterval(async()=>{const {data:{Users,onlineUsers}} = await axios(`${GET_INITIAL_CONTACTS}/${userInfo?.id}`);
+        const reload = async()=>{
+          const {data:{Users,onlineUsers}} = await axios(`${GET_INITIAL_CONTACTS}/${userInfo?.id}`);
         dispatch({type:reducercases.SET_USER_CONTACTS,userContacts: Users});
-        dispatch({type:reducercases.SET_ONLINE_USERS,onlineUsers});},5000);
+        dispatch({type:reducercases.SET_ONLINE_USERS,onlineUsers});
         
-
+        }
+        setInterval(reload,2000);
       } catch (error) {
         console.log(error);
       }
