@@ -1,5 +1,5 @@
-export const HOST = 'http://localhost:3005';
-// export const HOST = 'https://realtimechatbackend-production-d850.up.railway.app';
+// export const HOST = 'http://localhost:3005';
+export const HOST = 'https://realtimechatbackend-production-d850.up.railway.app';
 const AUTHROUTE = `${HOST}/api/auth`;
 const MESSAGES_ROUTE = `${HOST}/api/messages`;
 
